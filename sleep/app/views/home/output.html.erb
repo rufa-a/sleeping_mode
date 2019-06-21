@@ -1,0 +1,36 @@
+<%= javascript_include_tag 'application'%>
+<h1>Some Sleep Lifehacks</h1> 
+<h2><%="1. Take a hot bath."%></h2>
+<br>
+<p><%="A drop in body temperature helps to make you feel snoozy. When you take a hot bath, your body's temperature rises and the rapid cool-down that occurs when you get out of the bath relaxes you and helps you feel sleepy. "%> </p> 
+<br>
+<p style="text-align:center"><img src="/assets/bath.jpg"/></p>
+<br>
+<h2><%="2. Shut off your electronics."%> </h2>
+<br>
+<p><%= "Light hitting the retina suppresses the production of melatonin, a hormone that helps you sleep. So when you bury your face in your smartphone or laptop before bed, the blue light from your phone is confusing your brain into thinking it's still daytime and making you feel more alert. Instead of checking your Facebook notifications before bed, read a book or take a bath. And if you must check your phone, at least turn the display's brightness down."%> </p>
+<br>
+<p style="text-align:center"><img src="/assets/el.png"/></p>
+<br>
+<h2><%="3. Don't drink coffee in the afternoon."%></h2>
+<br>
+<p><%="Caffeine can stick around in your system for up to 10 hours and contribute to keeping you up at night since it's a stimulant. If you're having trouble falling asleep, avoid coffee and other caffeinated drinks (and food like chocolate!) for at least a few hours before bedtime. "%><p>
+<br>
+<p style="text-align:center"><img src="/assets/coffe.jpg" /></p>
+<br>
+<h2><%="4. Don't eat a huge meal right before bed."%> </h2>
+<br>
+<p><%="This seems counterintuitive since large meals, like Thanksgiving, often make you feel drowsy, but when you eat a big dinner right before bed, it could actually work against you once you actually go to lay down.  'Heartburn, or acid reflux, is a common medical problem, and is often caused by eating large meals or spicy food and then lying down before the stomach has had time to empty,' explains Dr. Epstein.  The discomfort your full stomach causes can end up keeping you awake. You're better off eating a few hours before you go to bed to give your body time to digest before bed."%></p>
+<br>
+<p style="text-align:center"><img src="/assets/meal.png"/></p>
+<br>
+<h2><%="5. Hide your clock."%></h2>
+<br>
+<p><%= t(:"If you have trouble sleeping, you may become very anxious about the fact that you can't sleep, which could lead you to wake up in the middle of the night and check the clock. 'Of course, this kind of worry will interfere with your ability to fall asleep,' Dr. Epstein explains . 'Because clock-watching can increase anxiety at night,  it is often a good idea to get rid of the bedside clock. ' So do yourself a favor and put your phone (or actual alarm clock) somewhere far away from where you sleep, like under your bed or in a draw, so that you're not tempted to look at it throughout the night.") %></p>
+<p style="text-align:center"><img src="/assets/clock.jpg"  width="500" height="600"/></p>
+<br>
+
+<%= button_tag 'Table of dependence of value of a dream from value of day', onclick: "value_table()", class: "btn btn-large btn-primary" %>
+<br> <br>
+
+<table id="table"/>

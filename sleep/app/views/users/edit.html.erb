@@ -1,0 +1,17 @@
+<h1>Editing User</h1>
+
+<%= render 'form', user: @user %>
+
+<br>
+<%= button_to 'Delete User', @user, method: :delete, data: {confirm: 'Are you sure?'}, class: 'rm btn'%>
+
+
+<style>
+  .rm {
+    color: #730E15;
+  }
+
+  .rm:hover {
+    color: #bc1723;
+  }
+</style>

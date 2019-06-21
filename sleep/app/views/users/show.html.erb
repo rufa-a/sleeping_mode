@@ -1,0 +1,74 @@
+<% provide(:title, @user.username) %>
+
+
+<br><br>
+<div class="container">
+  <div class="pull-left">
+    <h2><%=@user.username%></h2>
+    <%= image_tag @user.avatar.url(:large), class: 'img-thumbnail thumb' if @user.avatar? %>
+  </div>
+
+  <div class="pull-right">
+    <label>
+      <h2><%= @user.username%>'s results</h2>
+    </label>
+    <% @test_results.each do |test_result| %>
+      <div class="list-group" id="date">
+        <a href="<%=test_result_path(test_result)%>" class="list-group-item"><%= "testing date: "+test_result.date.strftime('%d/%m/%Y')  %></a>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<% if current_user.id == @user.id%>
+  <div class="container">
+    <div class="pull-left edit">
+      <%= link_to 'Edit Profile', edit_user_path(@user), class: 'btn edit' %>
+    </div>
+  </div>
+<%end%>
+
+
+
+
+
+
+
+
+
+
+<style>
+
+    .remove-btn {
+      border: 1px solid #c53c2f;
+      width: 100px;
+      text-align: center;
+      padding: 5px;
+      border-radius: 5px;
+      background-color: #c53c2f;
+      float: right;
+      margin-top: 10px;
+      margin-right: 15px;
+    }
+
+    .remove {
+      color: white;
+    }
+
+    .remove:hover {
+      color: white;
+      text-decoration: none;
+    }
+
+    .edit {
+      margin-top: 5%;
+      color: #c3c6c9;
+    }
+    .edit:hover {
+      margin-top: 5%;
+      color: #fdfdff;
+    }
+    #date{
+      text-decoration-color: black;
+    }
+</style>

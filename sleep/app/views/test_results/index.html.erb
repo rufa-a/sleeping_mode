@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Test Results</h1>
+
+<div class="container">
+  <div class="pull-left">
+    <h2><%="Question"%></h2>
+    <%="1. How old are You?"%><br>
+    <%="2. Do you have any problems with the cardiovascular system?" %><br>
+    <%="3. What do You do?" %><br>
+    <%="4. Do you usually sleep?" %><br>
+    <%="5. How many breaks do You usually have during the day?" %><br>
+    <%="6. How often do You snooze your alarm clock?" %><br>
+    <%= "DATE TEST" %> <br>
+  </div>
+
+  <div class="pull-right">
+      <h2><%= "Answer"%></h2>
+    <% @test_results.each do |test_result| %>
+      <%= test_result.v1 %><br>
+      <%= test_result.v2 %><br>
+      <%= test_result.v3 %><br>
+      <%= test_result.v4 %><br>
+      <%= test_result.v5 %><br>
+      <%= test_result.v6 %><br>
+      <%= test_result.date.strftime("%d/%m/%Y") %><br>
+    <% end %>
+  </div>
+</div>
+
+<br>
+
+<%= link_to 'New Test Result', new_test_result_path %>

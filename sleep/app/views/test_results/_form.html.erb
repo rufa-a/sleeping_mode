@@ -1,0 +1,61 @@
+<%= form_with(model: test_result, local: true, html: {multipart: true}) do |form| %>
+  <% if test_result.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(test_result.errors.count, "error") %> prohibited this test_result from being saved:</h2>
+
+      <ul>
+      <% test_result.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "1. "%> <%= (t(:"How old are You?"))%><br>
+    <%= form.radio_button :v1, '0-15' %> 0-15 <br>
+    <%= form.radio_button :v1, '15-25' %> 15-25 <br>
+    <%= form.radio_button :v1, '26 or older' %> <%= (t(:"26 or older")) %> 
+  </div>
+  <hr>
+  <div class="field">
+    <%= form.label "2. " %><%= (t(:"Do you have any problems with the cardiovascular system?"))%><br>
+    <%= form.radio_button :v2, :Yes %> <%= t "yes" %> <br>
+    <%= form.radio_button :v2, :No %> <%= t "no" %> <br>
+  </div>
+  <hr>
+  <div class="field">
+    <%= form.label "3. " %><%= (t(:"What do You do?"))%><br>
+    <%= form.radio_button :v3, :Learn %> <%= (t(:"learn")) %> <br>
+    <%= form.radio_button :v3, :Work %> <%= (t(:"work")) %> <br>
+    <%= form.radio_button :v3, :Self_develop %> <%= (t(:"self_develop")) %> <br>
+  </div>
+  <hr>
+  <div class="field">
+    <%= form.label "4. " %><%= (t(:"Do you usually sleep?"))%><br>
+    <%= form.radio_button :v4, :Yes %> <%= (t(:"yes")) %> <br>
+    <%= form.radio_button :v4, :Rare %> <%= (t(:"very rarely")) %> <br>
+  </div>
+  <hr>
+  <div class="field">
+    <%= form.label "5. " %><%= (t(:"How many breaks do You usually have during the day?"))%><br>
+    <%= form.radio_button :v5, '1-2' %> 1-2 <br>
+    <%= form.radio_button :v5, '3-4' %> 3-4 <br>
+    <%= form.radio_button :v5, '5 and more' %> <%=(t(:"5 and more")) %><br>
+  </div>
+  <hr>
+  <div class="field">
+    <%= form.label "6. "%><%= (t(:"How often do You snooze your alarm clock?"))%><br>
+    <%= form.radio_button :v6, '0'%> 0 <br>
+    <%= form.radio_button :v6, '1-3'%> 1-3 <br>
+    <%= form.radio_button :v6, '3-10'%> 3-10 <br>
+  </div>
+  <hr>
+  <div  class="field">
+    <%= form.hidden_field :date, :value => Time.now.strftime("%d/%m/%Y")%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Get results', class: 'btn btn-large btn-primary'%>
+  </div>
+<% end %>

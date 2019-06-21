@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1 style="text-align: center">Users</h1>
+
+<div class="container">
+  <%@users.each do |user|%>
+    <div class="container">
+      <ul class="list-group">
+        <a class="list-group-item" href="<%=user_path(user) %>">
+          <div class="pull-left">
+            <%= image_tag user.avatar.url(:thumb), class: 'img-thumbnail circle' if user.avatar? %>
+          </div>
+
+          <div class="name">
+            <h3 class="name"><%= user.username %> </h3>
+          </div>
+        </a>
+      </ul>
+    </div>
+  <% end %>
+</div>
+
+
+<%= link_to 'New User', new_user_path %>
+
+<style>
+  .name{
+    color: black;
+  }
+</style>

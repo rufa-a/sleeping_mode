@@ -1,0 +1,119 @@
+
+  <!--head>
+    <title>Authorization</title>
+    <%= csrf_meta_tags %>
+
+    <link rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+    <%-#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' -%>
+    <%-#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' -%>
+  </head-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sleep</title>
+    <%= csrf_meta_tags %>
+    <%-#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' -%>
+    <%-#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' -%>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  </head>
+  <body>
+
+    <%= render 'partials/nav' %>
+
+    <div class="container" id="main-container">
+      <%= yield %>
+    </div>
+     <%= debug(params) if Rails.env.development? %>
+  </body>
+</html>
+
+<style>
+    /*body {
+      font-family: "Georgia";
+    }*/
+    html{
+      
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      color: black;
+      text-shadow: grey 0 0 2px;
+    }
+
+    body {
+      font-family: "Georgia";
+      width: 1550px;
+      height: 4000px;
+      display: block;
+      position: relative;
+      margin: 0 auto;
+      z-index: 0;
+       background-repeat: space;
+    }
+    body::after {
+      background: url('/assets/n.jpg') fixed/*no-repeat center*/ /*center fixed*/;
+      content: "";
+      opacity: 0.9;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: -1;   
+    }
+
+    div {
+      font-size: 20px;
+      color: white;
+    }
+
+    input{
+      color:black;
+    }
+
+    button{
+      color: black;
+    }
+    table{
+      width: 300px;
+      border: 2px solid white;
+      text-align: center;
+      margin-left: 25px;
+    }
+
+    th{
+      padding: 5px;
+      border: 2px solid;
+    }
+
+    td{
+      padding: 5px;
+      border: 1px solid;
+    }
+
+    .btn {
+      background-color: black;
+      border: 1px solid black;
+    }
+    .navbar-brand {
+      font-size: 30px;
+    }
+    .navbar {
+      border-radius: 0;
+    }
+    a{
+      color: yellowgreen;
+    }
+    .list-group-item{
+      background: silver;
+    }
+
+</style>

@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>1. How old are You?</strong>
+  <%= @test_result.v1 %>
+</p>
+<br>
+<p>
+  <strong>2. Do you have any problems with the cardiovascular system?</strong>
+  <%= @test_result.v2 %>
+</p>
+<br>
+<p>
+  <strong>3. What do You do?</strong>
+  <%= @test_result.v3 %>
+</p>
+<br>
+<p>
+  <strong>4. Do you usually sleep?</strong>
+  <%= @test_result.v4 %>
+</p>
+<br>
+<p>
+  <strong>5. How many breaks do You usually have during the day?</strong>
+  <%= @test_result.v5 %>
+</p>
+<br>
+<p>
+  <strong>6. How often do You snooze your alarm clock?</strong>
+  <%= @test_result.v6 %>
+</p>
+<br>
+<p>
+  <strong>DATE_TEST:</strong>
+  <%= @test_result.date.strftime("%d/%m/%Y") %>
+</p>
+<hr>
+
+<% flag = false %>
+
+<p> <%= "We recommend you to sleep 8 hours at night." %> </p>
+
+<% if @test_result.v1 == "0-15" || @test_result.v2 == "yes" %>
+  <p> <%="Also we don't recommend You to sleep less than 8 hours." %> </p>
+  <% flag = true %>
+<% else %><p><%= "But, if You don't have time to sleep so much, You can choose one of the sleep regimes."%></p>
+<% end %>
+
+
+<% if flag != true && @test_result.v3 == "learn" && @test_result.v4 == "yes" %>
+  <p> <%= "There is a Biphasis Regime that You can choose. You should sleep 4 hours at night and 1.5 hours in the afternoon." %>
+  <% flag = true %>
+<% end %>
+
+<% if @test_result.v5 == "3-4" || @test_result.v5 == "5 and more" %>
+  <p> <%= "There is a Everyman Regime that You can choose. You should sleep 3 hours at night and 3 times for 20 minutes during the afternoon." %>
+  <% flag = true %>
+<% end %>
+
+<% if flag != true && (@test_result.v4 == "3-4" || @test_result.v4 == "5 and more") %>
+  <p> <%= "We just advise You to sleep. And if You really sleep very rarely and don't really have a lot of time to do such a primitive thing there is a Dymaxion Regime that You can choose. You should sleep 30 minutes every 6 hours." %>
+  <% flag = true %>
+<% end %>
+
+<% if @test_result.v6 == "3-10" %>
+  <p> <%= "Also we advise You to choose the day and sleep about 8 hours. Only after that You can start a new regime if You decided so." %>
+  <% flag = true %>
+<% end %>
+<br>
+<%= link_to 'Get test again', test_results_new_path %>

@@ -1,0 +1,25 @@
+ <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="<%= root_path %>">SleepTest</a>
+      </div>
+      <% if signed_in? %>
+        <ul class="nav navbar-nav">
+          <li class=""><a href="<%= root_path %>">Home</a></li>
+          <li><a href="<%= home_output_path %>"> SleepLifehacks</a></li>
+          <li><a href="<%= new_test_result_path%>">TakeTest</a></li>
+          <li><a href="<%= user_path(current_user) %>">Profile</a></li>
+          <li><a href="<%= users_path %>">Users</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="<%= session_destroy_path %>"><span class="glyphicon glyphicon-user"></span>Log Out</a></li>
+        </ul>
+      <% else %>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="<%= new_user_path %>"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="<%= session_new_path %>"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+        </ul>
+      <% end %>
+    </div>
+  </nav>
